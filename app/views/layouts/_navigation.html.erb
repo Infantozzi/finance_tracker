@@ -13,7 +13,8 @@
               <%= link_to 'My Portfolio', my_portfolio_path, class: button_class %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <% (request.path == my_friends_path) ? (button_class = 'nav-link active') : (button_class = 'nav-link') %>
+              <%= link_to 'My Friends', my_friends_path, class: button_class %>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -27,9 +28,6 @@
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
           </ul>
           <ul class='navbar-nav ml-auto mb-2 mb-lg-0'>
